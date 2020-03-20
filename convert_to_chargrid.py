@@ -3,6 +3,7 @@ import cv2
 from pytesseract import Output
 import numpy as np
 import os
+from tqdm import tqdm
 
 CHAR_MAP = {
  '"': (0, 255, 0),
@@ -95,3 +96,19 @@ def char_grid(
             )
             filename = input_dir.split('/')[-1]
             cv2.imwrite(os.path.join(output_dir, filename), blank_image)
+
+
+# if __name__=='__main__':
+#     list_images = [
+#         os.path.join('/content/drive/My Drive/image', i)
+#         for i in
+#         os.listdir('/content/drive/My Drive/image')
+#         if i.split('.')[-1] in ['png']
+#     ]
+#     for input_image in tqdm(list_images):
+#         # print(input_image)
+#         char_grid(
+#             input_image,
+#             "/content/drive/My Drive/KPMG_datasets/chargrid_image"
+#         )
+
